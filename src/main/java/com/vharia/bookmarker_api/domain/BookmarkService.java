@@ -20,6 +20,6 @@ public class BookmarkService {
     public BookmarksDTO getBookmarks(Integer page){
         int pageNo = page-1;
         Pageable pageable = PageRequest.of(pageNo, 5, Sort.Direction.DESC, "createdAt");
-        return new BookmarksDTO(bookmarksRepository.findAll(pageable));
+        return new BookmarksDTO(bookmarksRepository.findAllBookmarks(pageable));
     }
 }
