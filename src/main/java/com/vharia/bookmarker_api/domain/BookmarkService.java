@@ -22,4 +22,10 @@ public class BookmarkService {
         Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "createdAt");
         return new BookmarksDTO(bookmarksRepository.findAllBookmarks(pageable));
     }
+
+    public BookmarksDTO getBookmarks(String search, Integer page) {
+        int pageNo = page-1;
+        Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "createdAt");
+        return new BookmarksDTO(bookmarksRepository.findAllBookmarks(search,pageable));
+    }
 }
