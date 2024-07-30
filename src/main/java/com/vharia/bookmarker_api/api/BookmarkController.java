@@ -1,6 +1,7 @@
 package com.vharia.bookmarker_api.api;
 
 import com.vharia.bookmarker_api.domain.*;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class BookmarkController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public BookmarkDTO createBookmark(@RequestBody CreateBookmarkRequest createBookmarkRequest) {
+    public BookmarkDTO createBookmark(@RequestBody @Valid CreateBookmarkRequest createBookmarkRequest) {
         return bookmarkService.createBookmark(createBookmarkRequest);
     }
 

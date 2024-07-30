@@ -89,10 +89,10 @@ class BookmarkControllerTest {
         this.mvc.perform(post("/api/bookmarks")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("""
-                                    {
-                                        "title": "SivaLabs Blog",
-                                        "url": "https://sivalabs.in"
-                                    }
+                                {
+                                    "title": "SivaLabs Blog",
+                                    "url": "https://sivalabs.in"
+                                }
                                 """)
                 )
                 .andExpect(status().isCreated())
